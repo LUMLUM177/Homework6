@@ -17,8 +17,8 @@ public class Main {
         System.out.println(Arrays.toString(arr));
         System.out.println();
         int sum = 0;
-        for (int i : arr) {
-            sum += i;
+        for (int element : arr) {
+            sum += element;
         }
         System.out.println("Сумма трат за месяц составила: " + sum + " рублей.");
         System.out.println();
@@ -26,12 +26,12 @@ public class Main {
         //task 2
         int min = 200_001;
         int max = 99_999;
-        for (int i : arr) {
-            if (i > max) {
-                max = i;
+        for (int element : arr) {
+            if (element > max) {
+                max = element;
             }
-            if (i < min) {
-                min = i;
+            if (element < min) {
+                min = element;
             }
         }
         System.out.print("Минимальная сумма трат за день составила " + min + " рублей. ");
@@ -45,7 +45,7 @@ public class Main {
         System.out.println();
 
         //task 4
-        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
         for (int i = reverseFullName.length - 1; i >= 0; i--) {
             System.out.print(reverseFullName[i]);
         }
@@ -96,17 +96,18 @@ public class Main {
         System.out.println();
         int[] mainArray = {-6, 2, 5, -8, 8, 10, 4, -7, 12, 1};
         int lackOfNumbers = 0;
+        label:
         for (int i = 0; i < mainArray.length - 1; i++) {
             for (int j = i + 1; j < mainArray.length; j++) {
                 if (mainArray[i] + mainArray[j] == -2) {
                     System.out.println("Первое число: " + mainArray[i]);
                     System.out.println("Второе число: " + mainArray[j]);
-                    i = mainArray.length - 1;
                     lackOfNumbers++;
-                    break;
+                    break label;
                 }
             }
         }
+
         if (lackOfNumbers == 0) {
             System.out.println("Такой пары чисел нет!");
         }
